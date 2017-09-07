@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	 <style type="text/css">
+	 	img{
+	 		width: 150px; 
+	 		height: 150px;
+	 		float: left;
+	 		margin: 20px;
+	 	}
+
+	 	.kotak{
+	 		width: 900px;
+	 		margin: auto;
+	 		overflow: hidden;
+	 		min-height: 500px;
+	 	}
+
+	 	#gambar4{
+	 		position: relative;
+	 		top: 0px;
+	 		left: 0px;
+	 	}
+
+	 	#gambar5, #gambar6{
+	 		position: relative;
+	 		top: 0px;
+	 		right: 0px;
+	 	}
+	 </style>
+</head>
+<body>
+
+<h1>Evect Jquery</h1>
+
+<select id="efect">
+	<option value="hide">Hide</option>
+	<option value="show">Show</option>
+	<option value="toggle">Toggle</option>
+	<option value="animate">Animate</option>
+	<option value="queue">Queue</option>
+</select>
+
+<button id="cetak">Cetak</button>
+
+<div class="kotak">
+	<img id="gambar" src="https://www.javacodegeeks.com/wp-content/uploads/2014/05/Must-read-articles-for-Programmers-and-Software-Developers.jpg">
+	<img id="gambar" src="https://www.javacodegeeks.com/wp-content/uploads/2014/05/Must-read-articles-for-Programmers-and-Software-Developers.jpg">
+	<img id="gambar2" src="https://www.javacodegeeks.com/wp-content/uploads/2014/05/Must-read-articles-for-Programmers-and-Software-Developers.jpg">
+	<img id="gambar3" src="https://www.javacodegeeks.com/wp-content/uploads/2014/05/Must-read-articles-for-Programmers-and-Software-Developers.jpg">
+	<img id="gambar4" src="https://www.javacodegeeks.com/wp-content/uploads/2014/05/Must-read-articles-for-Programmers-and-Software-Developers.jpg">
+	<img id="gambar5" src="https://www.javacodegeeks.com/wp-content/uploads/2014/05/Must-read-articles-for-Programmers-and-Software-Developers.jpg">
+	<img id="gambar6" src="https://www.javacodegeeks.com/wp-content/uploads/2014/05/Must-read-articles-for-Programmers-and-Software-Developers.jpg">
+	<img id="gambar7" src="https://www.javacodegeeks.com/wp-content/uploads/2014/05/Must-read-articles-for-Programmers-and-Software-Developers.jpg">
+</div>
+
+<script type="text/javascript">
+	$("#cetak").click(function(){
+		var x = $("#efect").val();
+
+		// hide
+
+		if( x == "hide"){
+			$("#gambar").hide("slow");
+			// $("#item2").hide("slow",function(){
+			// 	alert("item successfully to hide");
+			// });
+
+		// =================================================
+
+		// show
+
+		}else if(x == "show"){
+			$("#gambar").show("slow");
+
+		// ==================================================
+
+		// toggle
+
+		}else if(x == "toggle"){
+			$("#gambar2").toggle("slow");
+
+		// ==================================================
+
+		// animate
+
+		}else if(x == "animate"){
+			$("#gambar3").animate({
+				//opacity: 0.25,
+				height: "+=200",
+				width: "+=200",
+			}, 2000);
+
+			$("#gambar3").animate({
+				//opacity: 0.25,
+				height: "-=200",
+				width: "-=200",
+			}, 2000);
+
+		// ===================================================
+		
+		}else if(x == "queue"){
+			$("#gambar4").animate({
+				top: "+=180",
+			});
+			$("#gambar4").animate({
+				left: "+=380",
+			});
+			$("#gambar5").animate({
+				left: "-=190",
+			});
+			$("#gambar6").animate({
+				right: "-=100",
+			});
+			$("#gambar6").animate({
+				right: "+=290",
+			});
+			$("#gambar4").animate({
+				top: "-=180",
+			});
+
+		}
+	});
+</script>
+
+</body>
+</html>
